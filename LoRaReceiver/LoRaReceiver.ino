@@ -1,3 +1,10 @@
+/*****************************************************************************
+  Created by: Aditya Pratama. email: adityapratama141198@gmail.com. Oct 2021
+  3 Phase kWh Meter Using LoRa Version 1.0
+  This is open source code. Please include my name in copies of this code
+  Thankyou ...
+ *****************************************************************************/
+
 #include <WebServer.h>
 #include <WiFiClient.h>
 #include <WiFi.h>
@@ -20,11 +27,11 @@ boolean parsing = false;
 float Vr, Ir, freqR, pfr, powerR, Vs, Is, freqS, pfs, powerS, Vt, It, freqT, pft, powerT, powerTotal;
 
 // koneksi wifi
-const char* ssid = "Masterpiece";
-const char* password = "handstand";
+const char* ssid = "REPLACE WITH YOUR SSID";
+const char* password = "REPLACE WITH YOUR PASSWORD";
 
 //WiFiClient client;
-char server [] = "192.168.216.222"; //Hostname
+char server [] = "152.195.416.242"; //This IP on your local computer
 WiFiClient client;
 
 void setup() {
@@ -185,7 +192,7 @@ void loop(){
     client.print(" ");      //SPACE BEFORE HTTP/1.1
     client.print("HTTP/1.1");
     client.println();
-    client.println("Host: 192.168.216.222"); // Hostname
+    client.println("Host: 152.195.416.242"); // Hostname
     client.println("Connection: close");
     client.println();
   } else {
